@@ -121,7 +121,7 @@ function multiplyArray(multArr) {
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
 
@@ -140,13 +140,41 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1,2,3,4,5];
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+function multiplyAnyArray(dynamicArray) {
+  var entireArrayConcat = '';
+  var prodBanswer = [];
+  // if the array has only 1 number pass that as finalAnswer
+  if(testDynamicArray.length === 1) {
+    prodBanswer[0] = testDynamicArray[0];
+    prodBanswer[1] = testDynamicArray[0];
+  } else {
+    for(var i = 0; i < testDynamicArray.length; i++) {
+      //Concat array
+      if (i === testDynamicArray.length || i === 0) {
+        entireArrayConcat = entireArrayConcat + testDynamicArray[i];
+      } else {
+        entireArrayConcat = entireArrayConcat + ',' + testDynamicArray[i];
+      }
+      // if this is the first loop && the array has more than one value, multiply the first two values
+      if (i === 0 && testDynamicArray.length > 0) {
+        prodBanswer = multiply(testDynamicArray[i], testDynamicArray[i + 1]);
+      // if it is not the last value in the array multiply the current & next value of the array
+      // then multiply by previous prodBAnswer.
+      // then set first value of prodBAnswer as prodCAnswer divided by the current array value
+      } else if (i < testDynamicArray.length - 1) {
+        var prodAanswer = multiply(testDynamicArray[i], testDynamicArray[i + 1]);
+        var prodCanswer = multiply(prodAanswer[0], prodBanswer[0]);
+        prodBanswer[0] = prodCanswer[0] / testDynamicArray[i];
+      }
+    }
+    // set 2nd vaule of prodBanswer to concatenated string.
+    prodBanswer[1] = 'The numbers ' + entireArrayConcat + ' have a product of ' + prodBanswer[0] + '.';
+  }
+  return(prodBanswer);
 }
-
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
