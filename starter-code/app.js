@@ -11,7 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
 var sumAnswer = a + b;
 var stringAnswer = 'The sum of ' + a + ' and ' + b + ' is ' + sumAnswer + '.';
-console.log (stringAnswer);
+// console.log(stringAnswer);
 return [sumAnswer, stringAnswer];
 }
 // Here is the test for sum(); uncomment it to run it
@@ -29,7 +29,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-var multiAnswer = a * 9;
+var multiAnswer = a * b;
 var stringAnswer = 'The product of ' + a + ' and ' + b + ' is ' + multiAnswer + '.';
 console.log(stringAnswer);
 return [multiAnswer, stringAnswer];
@@ -53,11 +53,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+var smAnswer = sum(a,b)[0];
+var sm1Answer = sum(c,smAnswer)[0];
+var plusAnswer = + a + ' and ' + b + ' and ' + c + ' sum to ' + sm1Answer + '.';
+var mpAnswer = multiply(a,b)[0];
+var mp1Answer = multiply(c, mpAnswer)[0];
+var timesAnswer = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mp1Answer + '.';
 
-}
+return [ sm1Answer, mp1Answer, plusAnswer, timesAnswer];}
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
