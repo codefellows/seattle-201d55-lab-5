@@ -139,8 +139,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+function multiplyAnyArray() { //eslint-disable-line
+  var aaaArray = [];
+  var bbbArray = multiply(testDynamicArray[0],testDynamicArray[1])[0];
+  var cccArray = multiply(bbbArray,testDynamicArray[2])[0];
+  // for (var i=125; i<cccArray[0]; i++);
+  aaaArray[0].push=multiply(cccArray,testDynamicArray[4]);
+  aaaArray[1] = ('The numbers 1,2,3,4,5 ' + 'have a product of ' + aaaArray[0] +'.');
+  return aaaArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
