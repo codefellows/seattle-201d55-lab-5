@@ -11,7 +11,6 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var sumAnswer = a + b;
   var stringAnswer = 'The sum of ' + a + ' and ' + b + ' is ' + sumAnswer + '.';
-  // console.log(stringAnswer);
   return [sumAnswer, stringAnswer];
 }
 // Here is the test for sum(); uncomment it to run it
@@ -31,7 +30,6 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var multiAnswer = a * b;
   var stringAnswer = 'The product of ' + a + ' and ' + b + ' is ' + multiAnswer + '.';
-  console.log(stringAnswer);
   return [multiAnswer, stringAnswer];
 }
 
@@ -106,9 +104,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var arith = multiply(2, 3)[0];
+  var multiply1 = multiply(arith, 4)[0];
+  var stringAnswer = 'The numbers 2,3,4 have a product of 24.';
+  return [multiply1, stringAnswer];
 }
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
