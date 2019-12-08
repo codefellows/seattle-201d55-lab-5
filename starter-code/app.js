@@ -8,9 +8,17 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
+
+// Global variable declarations
+let sumNumbers = 0;
+
 function sum(a, b) { //eslint-disable-line
-  let sumArray = [a + b, 'The sum of ' + a + ' and ' + b + ' is ' + (a + b) + '.'];
-  return sumArray;
+  sumNumbers = 0;
+  for (let i = 0, j = arguments.length; i < j; i++) {
+    sumNumbers += arguments[i];
+  }
+  let arrayOne = [sumNumbers, 'The sum of ' + a + ' and ' + b + ' is ' + sumNumbers + '.'];
+  return arrayOne;
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -28,8 +36,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let multArray = [a * b, 'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.'];
-  return multArray;
+  let arrayTwo = [a * b, 'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.'];
+  return arrayTwo;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -50,8 +58,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let sumAndMultArray = [a + b + c, a * b * c, a + ' and ' + b + ' and ' + c + ' sum to ' + (a + b + c) + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + (a * b * c) + '.'];
-  return sumAndMultArray;
+  let arrayThree = [a + b + c, a * b * c, a + ' and ' + b + ' and ' + c + ' sum to ' + (a + b + c) + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + (a * b * c) + '.'];
+  return arrayThree;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -73,12 +81,14 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  sum(...sumArr);
+  let arrayFour = [sumNumbers, sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumNumbers + ' is their sum.'];
+  return arrayFour;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
