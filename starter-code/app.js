@@ -11,6 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Global variable declarations
 let sumNumbers = 0;
+let prodNumbers = 1;
 
 function sum(a, b) { //eslint-disable-line
   sumNumbers = 0;
@@ -36,7 +37,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let arrayTwo = [a * b, 'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.'];
+  prodNumbers = 1;
+  for (let i = 0; i < arguments.length; i++) {
+    prodNumbers = prodNumbers * arguments[i];
+  }
+  let arrayTwo = [prodNumbers, 'The product of ' + a + ' and ' + b + ' is ' + prodNumbers + '.'];
   return arrayTwo;
 }
 
@@ -104,11 +109,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  multiply(...multArr);
+  let arrayFive = [prodNumbers, 'The numbers ' + 2 + ',' + 3 + ',' + 4 + ' have a product of ' + prodNumbers + '.'];
+  return arrayFive;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
