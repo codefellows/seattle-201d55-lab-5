@@ -34,6 +34,9 @@ function multiply(a, b) { //eslint-disable-line
   return [productAnswer, stringAnswer]
  }
 
+ // Michelle's solution
+ // return [a*b, The product of ${a} and ${b} is ${a * b}.'];
+ // temperal literal: uses backticks instead of single quotes - instead of single quotes and plus signs for concatenation, using dollar sign and curly brace to pull in those variables.
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
@@ -63,8 +66,11 @@ var productString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' +
 
 return [sumAnswer, productAnswer, sumString, productString];
 
+// return [sumAnswer, productAnswer, '${a} and ${b} and ${c} is multAnswer}.'];
 
 }
+
+// Michelle's answer - same as Andrew's
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
@@ -85,12 +91,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  console.log (testArray(0), testArray(1), testArray(2))
+
   var sumAnswer = sum(sum(testArray(0, 1)[0],testArray(2)[0]));
   var sumString = testArray(0) + ', ' + testArray(1) + ', ' + testArray(3) + ' was passed in as an array of numbers, and ' + sumAnswer + 'is their sum.';
 
 console.log (testArray(0), testArray(1), testArray(2))
 console.log (sumAnswer, sumString)
+
   return [sumAnswer, sumString];
 
 }
